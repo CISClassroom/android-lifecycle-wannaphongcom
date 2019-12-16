@@ -6,8 +6,10 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity() {
             Log.i("onClick","FAB Clicked")
             Snackbar.make(view, "ทดสอบระบบ", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+        button1.setOnClickListener { view ->
+            Toast.makeText(this, "Hi", Toast.LENGTH_LONG).show()
         }
     }
 
