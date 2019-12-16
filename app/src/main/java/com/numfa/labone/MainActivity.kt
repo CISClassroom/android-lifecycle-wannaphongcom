@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(i)
                 return true
             }
+            R.id.action_settings2 -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
