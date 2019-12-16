@@ -45,13 +45,13 @@ Log.warning("tag", "Hello World")
 คำสั่งแสดง Snackbar
 
 ```kotlin
-//Add your code here
+Snackbar.make(view, "ทดสอบระบบ Snackbar", Snackbar.LENGTH_LONG).setAction("Action", null).show()
 ```
 
 คำสั่งแสดง Tost
 
 ```kotlin
-//Add your code here
+Toast.makeText(this, "Hi", Toast.LENGTH_LONG).show()
 ```
 
 ## Android LiveCycle Activity
@@ -119,11 +119,24 @@ override fun onResume() {
 คำสั่งสำหรับเปิด activity ใหม่
 
 ```kotlin
-//Add your code here
+var i = Intent(this,NameOfActivity::class.java)
+startActivity(i)
 ```
 
 คำสั่งสำหรับเปิด activity ใหม่ ผ่านเมนู setting
 
 ```kotlin
-//Add your code here
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                var i = Intent(this,Main2Activity::class.java)
+                startActivity(i)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 ```

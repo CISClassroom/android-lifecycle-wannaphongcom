@@ -1,5 +1,6 @@
 package com.numfa.labone
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         }
         button1.setOnClickListener { view ->
             Toast.makeText(this, "Hi", Toast.LENGTH_LONG).show()
+            var i = Intent(this,Main2Activity::class.java)
+            startActivity(i)
         }
     }
 
@@ -45,7 +48,11 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                var i = Intent(this,Main2Activity::class.java)
+                startActivity(i)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
