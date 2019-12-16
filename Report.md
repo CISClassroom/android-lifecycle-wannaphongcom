@@ -12,31 +12,32 @@ import android.util.Log
 Debug log
 
 ```kotlin
-Log.debug("Log")
+Log.debug("tag", "Log")
 ```
 
 Error log
 
 ```kotlin
-Log.error("This is an error message")
+Log.error("tag", "This is an error message")
 ```
 
 Info log
 
 ```kotlin
-Log.info("This is an info message")
+Log.info("tag", "This is an info message")
+Log.i("tag", "This is an info message")
 ```
 
 Verbose log
 
 ```kotlin
-Log.v("This is an info message") 
+Log.v("tag", "This is an info message") 
 ```
 
 Warning log
 
 ```kotlin
-Log.warning("Hello World")
+Log.warning("tag", "Hello World")
 ```
 
 ## SNACKBAR และ TOST
@@ -55,12 +56,23 @@ Log.warning("Hello World")
 
 ## Android LiveCycle Activity
 
-จงอธิบาการทำงานของเมธอทต่อไปนี้ ว่าเกิดขึ้นเมื่อใดของโปรแกรม พร้อมแสดงตัวอย่างโค้ดการทำงานของเมธอท (กำหนดให้แสดง log message เมื่อมีการทำงานของเมธอท)
+จงอธิบายการทำงานของเมธอทต่อไปนี้ ว่าเกิดขึ้นเมื่อใดของโปรแกรม พร้อมแสดงตัวอย่างโค้ดการทำงานของเมธอท (กำหนดให้แสดง log message เมื่อมีการทำงานของเมธอท)
 
-1. onCreate() ->
+1. onCreate() -> เป็นเมธอทไว้กำหนดการทำงานเมื่อ Activity ถูกเรียกขึ้นมา
 
 ```kotlin
-//Add your code here
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+
+        Log.i("onCreate","Activity created")
+        fab.setOnClickListener { view ->
+            Log.i("onClick","FAB Clicked")
+            Snackbar.make(view, "ทดสอบระบบ", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+    }
 ```
 
 2. onStart() ->
@@ -72,16 +84,19 @@ Log.warning("Hello World")
 3. onResume() ->
 
 ```kotlin
-//Add your code here
+override fun onResume() {
+        super.onResume()
+        Log.i("onResume", "Activity resume")
+    }
 ```
 
-4. onPause() ->
+4. onPause() -> เป็นเมธอทไว้กำหนดการทำงานเมื่อ Activity ถูกรันไปเบื้องหลัง
 
 ```kotlin
 //Add your code here
 ```
 
-5. onStop() ->
+5. onStop() -> เป็นเมธอทไว้กำหนดการทำงานเมื่อ Activity ถูกรันไปเบื้องหลังนาน ๆ Android จะหยุดการทำงานนั้น
 
 ```kotlin
 //Add your code here
