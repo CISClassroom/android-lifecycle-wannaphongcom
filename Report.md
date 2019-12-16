@@ -15,7 +15,7 @@ Log.debug("Log")
 Error log
 
 ```kotlin
-//Add your code here
+Log.error("This is an error message")
 ```
 
 Info log
@@ -33,7 +33,7 @@ Verbose log
 Warning log
 
 ```kotlin
-//Add your code here
+Log.warning("Hello World")
 ```
 
 ## SNACKBAR และ TOST
