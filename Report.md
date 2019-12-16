@@ -1,13 +1,15 @@
 # รายงานผลการทดลอง
 
-<ชื่อ-นามสกุล> <รหัสนักศึกษา>
+นายวรรณพงษ์ ภัททิยไพบูลย์ 603410214-3
 
 ## คำสั่งการแสดงผลผ่าน Logcat
+
+import android.util.Log
 
 Debug log
 
 ```kotlin
-//Add your code here
+Log.debug("Log")
 ```
 
 Error log
@@ -19,7 +21,7 @@ Error log
 Info log
 
 ```kotlin
-//Add your code here
+Log.info("This is an info message")
 ```
 
 Verbose log
