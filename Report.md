@@ -30,7 +30,7 @@ Log.info("This is an info message")
 Verbose log
 
 ```kotlin
-//Add your code here
+Log.v("This is an info message") 
 ```
 
 Warning log
