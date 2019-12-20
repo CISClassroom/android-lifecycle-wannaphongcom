@@ -67,18 +67,16 @@ override fun onCreate(savedInstanceState: Bundle?) {
         setSupportActionBar(toolbar)
 
         Log.i("onCreate","Activity created")
-        fab.setOnClickListener { view ->
-            Log.i("onClick","FAB Clicked")
-            Snackbar.make(view, "ทดสอบระบบ", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 ```
 
-2. onStart() ->
+2. onStart() -> เป็นเมธอทที่ถูกเรียกหลังจาก onCreate และจะทำงานหลังจากที่แอปทำงานเบื้องหลังกลับมาที่ Application อีกครั้ง
 
 ```kotlin
-//Add your code here
+override fun onResume() {
+        super.onResume()
+        Log.d("Activity State ", "onResume")
+    }
 ```
 
 3. onResume() ->
@@ -93,25 +91,37 @@ override fun onResume() {
 4. onPause() -> เป็นเมธอทไว้กำหนดการทำงานเมื่อ Activity ถูกรันไปเบื้องหลัง
 
 ```kotlin
-//Add your code here
+override fun onPause() {
+        super.onPause()
+        Log.d("Activity State ", "onPause")
+    }
 ```
 
 5. onStop() -> เป็นเมธอทไว้กำหนดการทำงานเมื่อ Activity ถูกรันไปเบื้องหลังนาน ๆ Android จะหยุดการทำงานนั้น
 
 ```kotlin
-//Add your code here
+    override fun onStop() {
+        super.onStop()
+        Log.d("Activity State ", "onStop")
+    }
 ```
 
 6. onDestroy() ->
 
 ```kotlin
-//Add your code here
+override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Activity State ", "onDestroy")
+    }
 ```
 
 7. onRestart() ->
 
 ```kotlin
-//Add your code here
+override fun onRestart() {
+        super.onRestart()
+        Log.d("Activity State ", "onRestart")
+    }
 ```
 
 ## Start new Activity
