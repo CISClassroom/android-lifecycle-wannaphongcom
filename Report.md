@@ -79,7 +79,7 @@ override fun onResume() {
     }
 ```
 
-3. onResume() ->
+3. onResume() -> เป็นเมธอทที่ถูกเรียกเมื่อ Activity ปรากฎให้ผู้ใช้เห็นและเริ่มโต้ตอบกับผู้ใช้ ซึ่งจุดนี้ activity ของเราจะอยู่บนสุดของ stack และรับ input ต่าง ๆ จากผู้ใช้ได้
 
 ```kotlin
 override fun onResume() {
@@ -106,7 +106,7 @@ override fun onPause() {
     }
 ```
 
-6. onDestroy() ->
+6. onDestroy() -> เป็นเมธอทจะทำงานเมื่อ User ออกจาก App ก่อนที่ activity ถูกทำลายไป
 
 ```kotlin
 override fun onDestroy() {
@@ -115,7 +115,7 @@ override fun onDestroy() {
     }
 ```
 
-7. onRestart() ->
+7. onRestart() -> เป็นเมธอทที่จะถูกเรียกเมื่อ Activity กำลังจะกลับมาแสดงผลให้ผู้ใช้เห็นอีกครั้งหลังจากที่ถูก activity อื่นบังอยู่
 
 ```kotlin
 override fun onRestart() {
